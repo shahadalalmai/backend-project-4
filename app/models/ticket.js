@@ -16,6 +16,11 @@ const ticketSchema = new mongoose.Schema({
     price: {
         type: Number,
         default: 25
+    },
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true
     }
 }, {
     timestamps: true
