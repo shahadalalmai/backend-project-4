@@ -10,6 +10,7 @@ const userRoutes = require('./app/routes/user_routes')
 
 // require ticket routes
 const ticketRoutes = require('./app/routes/ticket_routes')
+const tourRoutes = require('./app/routes/tour_routes')
 
 
 
@@ -38,6 +39,8 @@ mongoose.Promise = global.Promise
 mongoose.connect(db, {
   useMongoClient: true
 })
+
+require('./app/models/seed')
 
 // instantiate express application object
 const app = express()
@@ -75,6 +78,7 @@ app.use(userRoutes)
 
 // register ticket routes
 app.use(ticketRoutes)
+app.use(tourRoutes)
 
 // register error handling middleware
 // note that this comes after the route middlewares, because it needs to be
