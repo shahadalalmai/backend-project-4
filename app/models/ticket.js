@@ -14,7 +14,7 @@ const ticketSchema = new mongoose.Schema({
         default: Date.now
     },
     price: {
-        type: Number,
+        type: Number, 
         default: 25
     },
     owner: {
